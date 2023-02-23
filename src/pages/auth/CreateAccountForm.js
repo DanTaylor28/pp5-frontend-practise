@@ -14,8 +14,10 @@ import appStyles from "../../App.module.css";
 import { Link, useHistory } from "react-router-dom";
 import signup from "../../assets/signup.png";
 import axios from "axios";
+import { UseRedirect } from "../../hooks/UseRedirect";
 
 const CreateAccountForm = () => {
+  UseRedirect('loggedIn')
   const [createProfileData, setCreateProfileData] = useState({
     username: "",
     password1: "",

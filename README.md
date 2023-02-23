@@ -23,3 +23,5 @@ changes i made
 - In editProfileForm.js, move the follow/unfollow button down below the bio and location - it looks way better
 
 - Adjust he styles of profilePage in ProfilePage.module.css (add BioLocation styles and take bold away from Username)
+
+- Create UseRedirect.js and hook to redirect users depending on loggedin status. Call this hook in the signinform and createaccountform.js as well as on the createPostForm.js page

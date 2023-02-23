@@ -15,9 +15,11 @@ import appStyles from "../../App.module.css";
 import signin from "../../assets/signin.png";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { UseRedirect } from "../../hooks/UseRedirect";
 
 const SignInForm = () => {
   const setCurrentUser = useSetCurrentUser();
+  UseRedirect("loggedIn");
 
   const [signInData, setSignInData] = useState({
     username: "",
@@ -39,7 +41,7 @@ const SignInForm = () => {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
-      history.push("/");
+      history.goBack()
     } catch (error) {
       setErrors(error.response?.data);
     }
