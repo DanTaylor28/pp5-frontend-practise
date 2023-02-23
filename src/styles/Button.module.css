@@ -1,0 +1,117 @@
+.Button {
+  display: flex;
+  justify-content: center;
+  width: 45%;
+  margin: auto;
+  padding: 10px 0px;
+  color: white;
+  background-color: #3b5998;
+  border-color: #3b5998;
+}
+
+.Button:hover {
+  cursor: pointer;
+  color: #3b5998;
+  background-color: #dfe3ee;
+  border-color: #3b5998;
+}
+
+.PostButton {
+  min-width: 20%;
+  margin: 10px;
+  padding: 5px 10px;
+  color: #dfe3ee;
+  background-color: #3b5998;
+  border-color: #dfe3ee;
+}
+
+.PostButton:hover {
+  cursor: pointer;
+  color: #3b5998;
+  background-color: #dfe3ee;
+  border-color: #3b5998;
+}
+
+.FollowButton {
+  margin: 0;
+  padding: 5px 5px;
+  color: white;
+  background-color: #3b5998;
+  border-color: #dfe3ee;
+  border-radius: 10%;
+}
+
+.FollowButton:hover {
+  margin: 0;
+  padding: 5px 5px;
+  color: #3b5998;
+  background-color: #dfe3ee;
+  border-color: #3b5998;
+}
+
+.UnfollowButton {
+  margin: 0;
+  padding: 5px 5px;
+  color: #3b5998;
+  background-color: #dfe3ee;
+  border-color: #3b5998;
+  border-radius: 10%;
+}
+
+.UnfollowButton:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #3b5998;
+  border-color: #dfe3ee;
+}
+
+.BtnDiv {
+  text-align: center;
+}
+
+.PinButton {
+  display: flex;
+  justify-content: center;
+  width: 35%;
+  margin: auto;
+  padding: 10px 0px;
+  color: white;
+  background-color: #e63b60 !important;
+  border-color: #f8f8f8;
+}
+
+.PinButton:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #b82f4c !important;
+  border-color: #f8f8f8;
+}
+
+.UnpinButton {
+  display: flex;
+  justify-content: center;
+  width: 35%;
+  margin: auto;
+  padding: 10px 0px;
+  color: white;
+  background-color: #e63b60 !important;
+  border-color: #f8f8f8;
+}
+
+.UnpinButton:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #b82f4c !important;
+  border-color: #f8f8f8;
+}
+
+.EditDeleteIcon {
+  color: #464646;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.EditDeleteIcon:hover {
+  color: black;
+  cursor: pointer;
+}

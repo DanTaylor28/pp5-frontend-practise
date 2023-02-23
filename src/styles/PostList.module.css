@@ -1,0 +1,16 @@
+.Search input {
+  border-radius: 30px;
+  padding: 10px;
+  padding-left: 15%;
+}
+
+.Icon {
+  position: absolute;
+  padding-top: 11px;
+  padding-left: 15px;
+  color: #bebebe;
+}
+
+.Icon:hover {
+  color: #949494;
+}

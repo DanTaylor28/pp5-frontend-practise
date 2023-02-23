@@ -1,0 +1,28 @@
+.Form {
+  background-color: white;
+}
+
+.Button {
+  min-width: 15%;
+  padding: 5px 10px;
+  color: white;
+  background-color: #3b5998;
+  border-color: #3b5998;
+}
+
+.Button:hover {
+  cursor: pointer;
+  color: #3b5998;
+  background-color: #dfe3ee;
+  border-color: #3b5998;
+}
+
+.BtnDiv {
+  text-align: right;
+}
+
+.CommentForm {
+  border: none;
+  border-bottom: 3px solid #bebebe;
+  margin-top: 10px;
+}

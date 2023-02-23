@@ -1,0 +1,41 @@
+.ImagePreview {
+  border: 1px solid #3b5998;
+  border-radius: 3px;
+  min-height: 513px;
+}
+
+@media (max-width: 768px) {
+  .ImagePreview {
+    border: none;
+    border-radius: 3px;
+    min-height: 513px;
+  }
+}
+
+.Image {
+  max-height: 40vh;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.CreatePostForm {
+  min-height: 400px;
+  border: 1px solid #3b5998;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+.Heading {
+  text-align: center;
+  color: #3b5998;
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  line-height: 20px;
+}
+
+.CategoryField {
+  margin: auto;
+}

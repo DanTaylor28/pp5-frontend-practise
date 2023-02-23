@@ -1,0 +1,62 @@
+.ProfileImage {
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+}
+
+@media screen and (max-width: 991px) {
+  .ProfileImage {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+.Username {
+  text-align: center;
+  color: #464646;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.StatsRow {
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 991px) {
+  .StatsRow {
+    margin-top: 20px;
+  }
+}
+
+.StatNames {
+  text-align: center;
+  color: #464646;
+  font-size: 15px;
+  font-weight: lighter;
+  text-transform: capitalize;
+  letter-spacing: 0.1em;
+}
+
+@media screen and (max-width: 700px) {
+  .StatNames {
+    font-size: 12px;
+  }
+}
+
+.StatsContainer {
+  margin-top: 37px;
+}
+
+.Heading {
+  text-align: center;
+  color: #464646;
+  margin-top: 80px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  line-height: 30px;
+}

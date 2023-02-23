@@ -1,0 +1,22 @@
+.Comment {
+    background-color: white;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.Owner {
+    color: #3b5998;
+    margin-right: 8px;
+}
+
+.Owner:hover {
+    color: #263961;
+}
+
+.OwnerLink:hover {
+    text-decoration: none;
+}
+
+.Timestamp {
+    color: #949494;
+}

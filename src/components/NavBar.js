@@ -1,43 +1,117 @@
 import React from "react";
-import { Container, Navbar, Nav } from "react-bootstrap";
-import logo2 from "../assets/logo2.png";
 import styles from "../styles/NavBar.module.css";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import {
+  useCurrentUser,
+  useSetCurrentUser,
+} from "../contexts/CurrentUserContext";
+import axios from "axios";
+import UseClickOutsideToggle from "../hooks/UseClickOutsideToggle";
 
 const NavBar = () => {
+  const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
+
+  const { expanded, setExpanded, ref } = UseClickOutsideToggle();
+
+  const handleSignOut = async () => {
+    try {
+      await axios.post("/dj-rest-auth/logout/");
+      setCurrentUser(null);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const createIcon = (
+    <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.ActiveLink}
+      to="/create/post"
+    >
+      Create
+      <i className="fa-regular fa-square-plus"></i>
+    </NavLink>
+  );
+
+  const signedInLinks = (
+    <>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.ActiveLink}
+        to="/pinboard"
+      >
+        My Pinboard
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.ActiveLink}
+        to="/discover"
+      >
+        Discover
+      </NavLink>
+      <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
+        Sign Out
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        to={`/profiles/${currentUser?.profile_id}`}
+      >
+        Profile
+        <img src={currentUser?.profile_image} alt="" />
+      </NavLink>
+    </>
+  );
+  const signedOutLinks = (
+    <>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.ActiveLink}
+        to="/signin"
+      >
+        Sign In
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.ActiveLink}
+        to="/create/account"
+      >
+        Create Account
+      </NavLink>
+    </>
+  );
+
   return (
-    <Navbar className={styles.NavBar} expand="md" fixed="top">
+    <Navbar
+      className={styles.NavBar}
+      bg="dark"
+      variant="dark"
+      expand="md"
+      fixed="top"
+      expanded={expanded}
+    >
       <Container>
         <NavLink to="/">
-          <Navbar.Brand>
-            <img src={logo2} alt="logo" height="75" />
-          </Navbar.Brand>
+          <Navbar.Brand>Logo here</Navbar.Brand>
         </NavLink>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        {currentUser && createIcon}
+        <Navbar.Toggle
+          onClick={() => setExpanded(!expanded)}
+          ref={ref}
+          aria-controls="basic-navbar-nav"
+        />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
             <NavLink
               exact
               className={styles.NavLink}
-              activeClassName={styles.Active}
+              activeClassName={styles.ActiveLink}
               to="/"
             >
-              <i className="fas fa-home"></i>Home
+              Home
             </NavLink>
-            <NavLink
-              className={styles.NavLink}
-              activeClassName={styles.Active}
-              to="/signin"
-            >
-              <i className="fas fa-sign-in-alt"></i>Sign In
-            </NavLink>
-            <NavLink
-              className={styles.NavLink}
-              activeClassName={styles.Active}
-              to="/signup"
-            >
-              <i className="fas fa-user-plus"></i>Sign Up
-            </NavLink>
+            {currentUser ? signedInLinks : signedOutLinks}
           </Nav>
         </Navbar.Collapse>
       </Container>
