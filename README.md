@@ -17,3 +17,9 @@ changes i made
 - editProfileForm.js Form.File line 136 added classname = d-none and line 145 changed image to profile_image so profile image preview shows as expected.
 
 - move the edit profile dropdown from line 55 to line 67 and put it in a span with the profile username
+
+- Add the extra location field to all required lines of code in EditProfileForm.js and add line 112-118 in profilepage.js (the same code as the bio but adjust it for location and add a font awesome icon by it)
+
+- In editProfileForm.js, move the follow/unfollow button down below the bio and location - it looks way better
+
+- Adjust he styles of profilePage in ProfilePage.module.css (add BioLocation styles and take bold away from Username)

@@ -14,7 +14,6 @@
 .Username {
   text-align: center;
   color: #464646;
-  font-weight: bold;
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -59,4 +58,12 @@
   text-transform: uppercase;
   letter-spacing: 0.2em;
   line-height: 30px;
+}
+
+.BioLocation {
+  text-align: center;
+  color: #464646;
+  font-size: 15px;
+  font-weight: lighter;
+  letter-spacing: 0.1em;
 }

@@ -27,9 +27,10 @@ const EditProfileForm = () => {
   const [profileData, setProfileData] = useState({
     name: "",
     bio: "",
+    location: "",
     profile_image: "",
   });
-  const { name, bio, profile_image } = profileData;
+  const { name, bio, location, profile_image } = profileData;
 
   const [errors, setErrors] = useState({});
 
@@ -38,8 +39,8 @@ const EditProfileForm = () => {
       if (currentUser?.profile_id?.toString() === id) {
         try {
           const { data } = await axiosReq.get(`/profiles/${id}`);
-          const { name, bio, profile_image } = data;
-          setProfileData({ name, bio, profile_image });
+          const { name, bio, location, profile_image } = data;
+          setProfileData({ name, bio, location, profile_image });
         } catch (error) {
           console.log(error);
           history.push("/");
@@ -64,6 +65,7 @@ const EditProfileForm = () => {
     const formData = new FormData();
     formData.append("name", name);
     formData.append("bio", bio);
+    formData.append("location", location);
 
     if (imageFile?.current?.files[0]) {
       formData.append("profile_image", imageFile?.current?.files[0]);
@@ -96,6 +98,21 @@ const EditProfileForm = () => {
       </Form.Group>
 
       {errors?.bio?.map((message, idx) => (
+        <Alert variant="danger" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      <Form.Group>
+        <Form.Label>Location</Form.Label>
+        <Form.Control
+          as="input"
+          value={location}
+          onChange={handleChange}
+          name="location"
+        />
+      </Form.Group>
+
+      {errors?.location?.map((message, idx) => (
         <Alert variant="danger" key={idx}>
           {message}
         </Alert>
