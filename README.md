@@ -32,3 +32,11 @@ changes i made
 
 - run npm audit fix to see if I can fix any npm errors in the console.
 
+- Create PageNotFound.js and module.css file to make a better looking page not found message. Call this component in App.js instead of the p tag message.
+
+- Adjust react bootstrap imports in my components so they display like 
+import Spinner from "react-bootstrap/Spinner"
+
+- Change the title in index.html to my project name 
+
+- Refetch user posts on login/out by importing and using useCurrentUser hook in PostList.js and adding currentUser to the dependency array along with the other 3 dependencies.

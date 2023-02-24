@@ -9,6 +9,7 @@ import noResultImg from "../../assets/no-results.png";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { getMoreData } from "../../utils/utils";
 import MostFollowedProfiles from "../profiles/MostFollowedProfiles";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function PostList({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
@@ -16,6 +17,7 @@ function PostList({ message, filter = "" }) {
   const { pathname } = useLocation();
 
   const [searchQuery, setSearchQuery] = useState("");
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const getPosts = async () => {
@@ -36,7 +38,7 @@ function PostList({ message, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, pathname, searchQuery]);
+  }, [filter, pathname, searchQuery, currentUser]);
 
   return (
     <Row>
