@@ -16,6 +16,7 @@ import signin from "../../assets/signin.png";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { UseRedirect } from "../../hooks/UseRedirect";
+import { setTokenTimestamp } from "../../utils/utils";
 
 const SignInForm = () => {
   const setCurrentUser = useSetCurrentUser();
@@ -41,7 +42,8 @@ const SignInForm = () => {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
-      history.goBack()
+      setTokenTimestamp(data);
+      history.goBack();
     } catch (error) {
       setErrors(error.response?.data);
     }

@@ -25,3 +25,10 @@ changes i made
 - Adjust he styles of profilePage in ProfilePage.module.css (add BioLocation styles and take bold away from Username)
 
 - Create UseRedirect.js and hook to redirect users depending on loggedin status. Call this hook in the signinform and createaccountform.js as well as on the createPostForm.js page
+
+- Remove strict.mode tags wrapped around my components in index.js to get rid of some console errors
+
+- Define the 3 tokentimestamp functions in utils.js and apply them to specific functions throughout the application to get rid of console errors (navbar.js, currentusercontext.js)
+
+- run npm audit fix to see if I can fix any npm errors in the console.
+
