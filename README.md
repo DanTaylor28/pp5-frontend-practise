@@ -40,3 +40,17 @@ import Spinner from "react-bootstrap/Spinner"
 - Change the title in index.html to my project name 
 
 - Refetch user posts on login/out by importing and using useCurrentUser hook in PostList.js and adding currentUser to the dependency array along with the other 3 dependencies.
+
+- In my api, in comments/serialziers.py add comment_liked_id to my fields and define the get_comment_liked_id the same way as you got the pinned_id but change the required parts.
+
+- In comment.js include the code from line 77-109 which adds the thumbs up button next to the comment along with an if statement showing the correct font awesome icon. Also add comment_liked_id to the list of props at the top of the file.
+
+- Define handleCommentLike in Comment.js and call it in the onclick value for the like button next to the comment.
+
+- Define handleCommentUnlike in Comment.js and call it in the onclick value for the unlike button next to the comment.
+
+- Switch out the bootstrap buttons you used for the comment likes in comment.js to a standard button tag to stop it lighting up in the blue color when you click it.
+
+- Add line 50-63 in PostList.js to make searchbar show on smaller screens
+
+- Add SearchMobile input to PostList.module.css

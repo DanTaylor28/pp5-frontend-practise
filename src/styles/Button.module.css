@@ -117,7 +117,7 @@
 }
 
 .LikeBtn {
-  color: #464646;
+  color: #e63b60;
   padding: 10px;
   font-size: 20px;
   background-color: white;
@@ -127,7 +127,7 @@
 }
 
 .LikeBtn:hover {
-  color: #e63b60;
+  color: #b82f4c;
   padding: 10px;
   font-size: 20px;
   background-color: white;
