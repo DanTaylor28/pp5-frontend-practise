@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Media } from "react-bootstrap";
+import { Media, Button, Tooltip, OverlayTrigger } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ProfileAvatar from "../../components/ProfileAvatar";
 import styles from "../../styles/Comment.module.css";
+import btnStyles from "../../styles/Button.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { EditDeleteDropdown } from "../../components/EditDeleteDropdown";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -18,6 +19,10 @@ const Comment = (props) => {
     setPost,
     setComments,
     updated_at,
+    num_of_comment_likes,
+    pinned_id,
+    // Pinned_id above needs to be replaced with comment_liked_id when
+    // you manage to add that to your comment_like app on drf_api
   } = props;
 
   const [displayEditForm, setDisplayEditForm] = useState(false);
@@ -68,6 +73,38 @@ const Comment = (props) => {
             <p className="mt-1">{text}</p>
           )}
         </Media.Body>
+
+        <div>
+          {pinned_id ? (
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>{num_of_comment_likes} like this</Tooltip>}
+            >
+              <Button className={btnStyles.LikeBtn} onClick={() => {}}>
+                <i className="fa-solid fa-thumbs-up"></i>
+              </Button>
+            </OverlayTrigger>
+          ) : currentUser ? (
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>{num_of_comment_likes} like this</Tooltip>}
+            >
+              <Button className={btnStyles.LikeBtn} onClick={() => {}}>
+                <i className="fa-regular fa-thumbs-up"></i>
+              </Button>
+            </OverlayTrigger>
+          ) : (
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Log in to like comments</Tooltip>}
+            >
+              <Button className={btnStyles.LikeBtn}>
+                <i className="fa-regular fa-thumbs-up"></i>
+              </Button>
+            </OverlayTrigger>
+          )}
+        </div>
+
         {is_comment_owner && (
           <EditDeleteDropdown
             handleEdit={() => setDisplayEditForm(true)}

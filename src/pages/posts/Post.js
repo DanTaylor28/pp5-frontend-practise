@@ -137,7 +137,7 @@ const Post = (props) => {
           ) : (
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip>Log in to like posts</Tooltip>}
+              overlay={<Tooltip>Log in to pin posts</Tooltip>}
             >
               <Button className={btnStyles.PinButton}>
                 <i className="fa-regular fa-heart"></i>

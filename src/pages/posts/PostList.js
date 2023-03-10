@@ -10,6 +10,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { getMoreData } from "../../utils/utils";
 import MostFollowedProfiles from "../profiles/MostFollowedProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import FollowingProfiles from "../profiles/MostActiveProfiles";
 
 function PostList({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
@@ -43,7 +44,7 @@ function PostList({ message, filter = "" }) {
   return (
     <Row>
       <Col className="d-none d-lg-block p-0 p-lg-2" md={3}>
-        <p>Profile I follow - desktop</p>
+        <FollowingProfiles />
       </Col>
       <Col className="py-2 p-0 p-lg-2" lg={6}>
         <MostFollowedProfiles mobile />
